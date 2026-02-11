@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 - Setup & Containers | Bootstrap Cheatsheet</title>
+    <!-- 
+        ================================================================
+        1. BOOTSTRAP SETUP (CDN)
+        ================================================================
+        To use Bootstrap, you usually need to include the CSS link in the <head>
+        and the JS script at the end of the <body>.
+        
+        This is much faster than writing your own CSS reset and base styles.
+    -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        /* Custom styles just for this demo to show boundaries */
+        .demo-box {
+            background-color: #e2e3e5;
+            border: 1px dashed #6c757d;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .comparison-section {
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV: Just a link back to Home -->
+    <nav class="bg-light p-3 mb-4 border-bottom">
+        <div class="container">
+            <a href="index.html" class="text-decoration-none">&larr; Back to Index</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="mb-4">01. Setup & Containers</h1>
+
+        <div class="alert alert-info">
+            <strong>What is a Container?</strong> In Bootstrap, a container is the most basic layout element. It's
+            required when using the grid system. It centers your content and adds some horizontal padding.
+        </div>
+
+        <!-- 
+            ================================================================
+            2. FIXED WIDTH CONTAINER (.container)
+            ================================================================
+            The .container class provides a responsive fixed width container.
+            
+            VS BASIC CSS:
+            .my-container {
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+                margin-right: auto;
+                margin-left: auto;
+                max-width: 1140px; (on large screens)
+            }
+        -->
+        <div class="comparison-section">
+            <h3>1. Fixed Container (<code>.container</code>)</h3>
+            <p>This container has a <code>max-width</code> at each breakpoint. It sits in the middle of the screen.</p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">Bootstrap Way</div>
+                        <div class="card-body">
+                            <code>&lt;div class="container"&gt;Content&lt;/div&gt;</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-secondary text-white">Basic CSS Equivalent</div>
+                        <div class="card-body">
+                            <pre>
+.container {
+  width: 100%;
+  padding-inline: 0.75rem;
+  margin-inline: auto;
+  max-width: 1320px; /* changes per breakpoint */
+}
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <strong>Result Demo:</strong>
+                <!-- Actual Bootstrap Container inside our wrapper -->
+                <div class="container demo-box">
+                    I am inside a <code>.container</code>. Resize your browser window to see me snap to specific widths!
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 
+            ================================================================
+            3. FLUID CONTAINER (.container-fluid)
+            ================================================================
+            The .container-fluid class provides a full width container, spanning the entire width of the viewport.
+            
+            VS BASIC CSS:
+            .my-fluid-container {
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+        -->
+        <div class="comparison-section">
+            <h3>2. Fluid Container (<code>.container-fluid</code>)</h3>
+            <p>This container is <em>always</em> 100% wide, regardless of screen size.</p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">Bootstrap Way</div>
+                        <div class="card-body">
+                            <code>&lt;div class="container-fluid"&gt;Content&lt;/div&gt;</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-secondary text-white">Basic CSS Equivalent</div>
+                        <div class="card-body">
+                            <pre>
+.container-fluid {
+  width: 100%;
+  padding-inline: 0.75rem;
+  margin-inline: auto;
+  /* No max-width restriction */
+}
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <strong>Result Demo:</strong>
+                <!-- Actual Bootstrap Fluid Container -->
+                <div class="container-fluid demo-box">
+                    I am inside a <code>.container-fluid</code>. I will always stretch to the edges.
+                </div>
+            </div>
+        </div>
+
+        <!-- 
+            ================================================================
+            4. BREAKPOINTS
+            ================================================================
+        -->
+        <div class="comparison-section">
+            <h3>3. Breakpoints (Cheat Sheet)</h3>
+            <p>Bootstrap uses these default breakpoints for its media queries.</p>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Breakpoint</th>
+                        <th>Class Infix</th>
+                        <th>Dimensions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>X-Small</td>
+                        <td><em>None</em></td>
+                        <td>&lt;576px</td>
+                    </tr>
+                    <tr>
+                        <td>Small</td>
+                        <td><code>sm</code></td>
+                        <td>&ge;576px</td>
+                    </tr>
+                    <tr>
+                        <td>Medium</td>
+                        <td><code>md</code></td>
+                        <td>&ge;768px</td>
+                    </tr>
+                    <tr>
+                        <td>Large</td>
+                        <td><code>lg</code></td>
+                        <td>&ge;992px</td>
+                    </tr>
+                    <tr>
+                        <td>Extra Large</td>
+                        <td><code>xl</code></td>
+                        <td>&ge;1200px</td>
+                    </tr>
+                    <tr>
+                        <td>XXL</td>
+                        <td><code>xxl</code></td>
+                        <td>&ge;1400px</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
