@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 - Grid System | Bootstrap Cheatsheet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .demo-col {
+            padding-top: .75rem;
+            padding-bottom: .75rem;
+            background-color: rgba(39, 41, 43, 0.03);
+            border: 1px solid rgba(39, 41, 43, 0.1);
+            text-align: center;
+        }
+
+        .comparison-section {
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="bg-light p-3 mb-4 border-bottom">
+        <div class="container">
+            <a href="index.html" class="text-decoration-none">&larr; Back to Index</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="mb-4">02. Grid System</h1>
+        <p class="lead">Bootstrap's grid system uses a series of containers, rows, and columns to layout and align
+            content. It's built with flexbox and is fully responsive.</p>
+
+        <!-- 
+            ================================================================
+            1. THE 12-COLUMN GRID
+            ================================================================
+        -->
+        <div class="comparison-section">
+            <h3>1. The 12-Column Grid</h3>
+            <p>Bootstrap assumes every row is divided into 12 equal vertical strips (columns). You specify how many
+                strips your content should span.</p>
+
+            <div class="alert alert-warning">
+                <strong>Rule:</strong> Columns (<code>.col-*</code>) must be immediate children of a Row
+                (<code>.row</code>).
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-4 demo-col">.col-4 (1/3 width)</div>
+                <div class="col-4 demo-col">.col-4 (1/3 width)</div>
+                <div class="col-4 demo-col">.col-4 (1/3 width)</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-8 demo-col">.col-8 (2/3 width)</div>
+                <div class="col-4 demo-col">.col-4 (1/3 width)</div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">Bootstrap Way</div>
+                        <div class="card-body">
+                            <pre class="mb-0"><code>&lt;div class="row"&gt;
+  &lt;div class="col-4"&gt;...&lt;/div&gt;
+  &lt;div class="col-8"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-secondary text-white">CSS Flexbox Equivalent</div>
+                        <div class="card-body">
+                            <pre class="mb-0">
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.col-4 { width: 33.33%; }
+.col-8 { width: 66.66%; }
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 
+            ================================================================
+            2. RESPONSIVE COLUMNS
+            ================================================================
+        -->
+        <div class="comparison-section">
+            <h3>2. Responsive Columns</h3>
+            <p>You can specify different widths for different screen sizes using breakpoints (<code>sm</code>,
+                <code>md</code>, <code>lg</code>, etc.).</p>
+            <p>Example: <code>col-12 col-md-6</code> means "100% wide on mobile, 50% wide on medium screens and up".</p>
+
+            <div class="row">
+                <div class="col-12 col-md-6 demo-col text-white bg-dark">
+                    Col A <br>(12 on mobile, 6 on desktop)
+                </div>
+                <div class="col-12 col-md-6 demo-col text-white bg-secondary">
+                    Col B <br>(12 on mobile, 6 on desktop)
+                </div>
+            </div>
+        </div>
+
+        <!-- 
+            ================================================================
+            3. AUTO LAYOUT
+            ================================================================
+        -->
+        <div class="comparison-section">
+            <h3>3. Auto Layout Columns</h3>
+            <p>If you use <code>.col</code> without a number, they will share the remaining space equally.</p>
+
+            <div class="row">
+                <div class="col demo-col">1 of 3 (Auto)</div>
+                <div class="col-6 demo-col">2 of 3 (Fixed 6)</div>
+                <div class="col demo-col">3 of 3 (Auto)</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
