@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06 - Forms & Inputs | Bootstrap Cheatsheet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .comparison-section {
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="bg-light p-3 mb-4 border-bottom">
+        <div class="container">
+            <a href="index.html" class="text-decoration-none">&larr; Back to Index</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="mb-4">06. Forms & Inputs</h1>
+
+        <!-- 
+            ================================================================
+            1. FORM CONTROL
+            ================================================================
+        -->
+        <div class="comparison-section">
+            <h3>1. Basic Form Controls</h3>
+            <p>Use <code>.form-control</code> to style text inputs and textareas.</p>
+
+            <form>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address (Label)</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else. (Form Text)
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <!-- Checkbox -->
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+        <!-- 
+            ================================================================
+            2. SELECT & RANGE
+            ================================================================
+        -->
+        <div class="comparison-section">
+            <h3>2. Select Menus & Ranges</h3>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="form-label">Select Menu (<code>.form-select</code>)</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="customRange1" class="form-label">Example Range (<code>.form-range</code>)</label>
+                    <input type="range" class="form-range" id="customRange1">
+                </div>
+            </div>
+        </div>
+
+        <!-- 
+            ================================================================
+            3. FLOATING LABELS
+            ================================================================
+        -->
+        <div class="comparison-section">
+            <h3>3. Floating Labels</h3>
+            <p>A modern looking form style where the label moves up when you type.</p>
+
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+        </div>
+
+        <!-- 
+            ================================================================
+            4. VALIDATION STYLES
+            ================================================================
+        -->
+        <div class="comparison-section">
+            <h3>4. Validation States</h3>
+            <p>Bootstrap includes validation styles for valid and invalid inputs.</p>
+
+            <form class="row g-3">
+                <div class="col-md-4">
+                    <label for="validationServer01" class="form-label">First name</label>
+                    <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationServer02" class="form-label">Last name</label>
+                    <input type="text" class="form-control is-invalid" id="validationServer02" value="" required>
+                    <div class="invalid-feedback">
+                        Please choose a last name.
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
